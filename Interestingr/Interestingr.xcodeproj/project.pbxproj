@@ -12,6 +12,7 @@
 		6618FB0F19B1723A00828048 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6618FB0E19B1723A00828048 /* Images.xcassets */; };
 		6618FB1219B1723A00828048 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6618FB1019B1723A00828048 /* MainMenu.xib */; };
 		6618FB1E19B1723B00828048 /* InterestingrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6618FB1D19B1723B00828048 /* InterestingrTests.swift */; };
+		6618FB2819B2956D00828048 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6618FB2719B2956D00828048 /* NetworkController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		6618FB1719B1723B00828048 /* InterestingrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InterestingrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6618FB1C19B1723B00828048 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6618FB1D19B1723B00828048 /* InterestingrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestingrTests.swift; sourceTree = "<group>"; };
+		6618FB2719B2956D00828048 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				6618FB0C19B1723A00828048 /* AppDelegate.swift */,
 				6618FB0E19B1723A00828048 /* Images.xcassets */,
 				6618FB1019B1723A00828048 /* MainMenu.xib */,
+				6618FB2719B2956D00828048 /* NetworkController.swift */,
 				6618FB0819B1723A00828048 /* Supporting Files */,
 			);
 			path = Interestingr;
@@ -210,6 +213,7 @@
 			files = (
 				6618FB0D19B1723A00828048 /* AppDelegate.swift in Sources */,
 				6618FB0B19B1723A00828048 /* main.swift in Sources */,
+				6618FB2819B2956D00828048 /* NetworkController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
