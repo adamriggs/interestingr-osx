@@ -46,10 +46,6 @@ class NetworkController: NSObject, NSXMLParserDelegate {
     }
     
     func parser(parser: NSXMLParser!, didStartElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!, attributes attributeDict: NSDictionary!) {
-        //println("Element's name is \(elementName)")
-        //println("Element's attributes are \(attributeDict)")
-        
-        //https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
         
         var file = "/Users/adam/Documents/Experiments/swift/osx/interestingr-osx/interestingness.html"
         var url = ""
@@ -64,29 +60,16 @@ class NetworkController: NSObject, NSXMLParserDelegate {
             url += "_"
             url += attributeDict["secret"] as NSString
             url += ".jpg"
+            
+            flickrOutput += "<img src ='"
+            flickrOutput += url
+            flickrOutput += "' />\n"
+            
+            flickrOutput.writeToFile(file, atomically: true, encoding: NSUTF8StringEncoding, error: nil)
+            
+            parent.flickrLoaded(url)
         }
         
-        flickrOutput += "<img src ='"
-        flickrOutput += url
-        flickrOutput += "' />\n"
-        
-//        if(elementName == "photo"){
-//            //println(attributeDict["farm"])
-//            flickrOutput += "<img src ='https://farm"
-//            flickrOutput += attributeDict["farm"] as NSString
-//            flickrOutput += ".staticflickr.com/"
-//            flickrOutput += attributeDict["server"] as NSString
-//            flickrOutput += "/"
-//            flickrOutput += attributeDict["id"] as NSString
-//            flickrOutput += "_"
-//            flickrOutput += attributeDict["secret"] as NSString
-//            flickrOutput += ".jpg' />\n"
-//        }
-        
-        //println(flickrOutput)
-        flickrOutput.writeToFile(file, atomically: true, encoding: NSUTF8StringEncoding, error: nil)
-        
-        parent.flickrLoaded(url)
     }
 
 }
