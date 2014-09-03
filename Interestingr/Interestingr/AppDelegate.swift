@@ -13,6 +13,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet var window: NSWindow
     @IBOutlet var mainImage: NSImageView
     
+    @IBAction func nextImage(sender: AnyObject) {
+        displayNextImage(interestingnessArrayCurrendID++)
+    }
+    
+    @IBAction func prevImage(sender: AnyObject) {
+        displayPrevImage(interestingnessArrayCurrendID--)
+    }
+    
+    
+    
     var interestingnessArray: [String] = []
     var interestingnessArrayCurrendID = 0
     
@@ -28,6 +38,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
     
+    func getInterestingness(){
+        
+    }
+    
     func flickrLoaded(urlString: String){
         //println("flickrLoaded()")
         interestingnessArray.append(urlString)
@@ -35,6 +49,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func displayNextImage(id: Int){
+        //println("next"
+        //println(id)
         var nextId: Int = id
         
         if(id<(interestingnessArray.count-1)){
@@ -45,13 +61,49 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             nextId = 0
         }
         
+        if(id==interestingnessArray.count-1){
+            nextId = 0
+        }
+        
         if(id<0){
             nextId = 0
         }
         
+        //println(nextId)
+        //println("*****")
+        
         interestingnessArrayCurrendID = nextId
-        var url:NSURL = NSURL.URLWithString(interestingnessArray[interestingnessArrayCurrendID])
-        mainImage.image = NSImage(byReferencingURL: url)
+        displayImage(interestingnessArrayCurrendID)
+    }
+    
+    func displayPrevImage(id: Int){
+        //println("prev")
+        //println(id)
+        var nextId: Int = id
+        
+        if(id>0){
+            nextId--
+        }
+        
+        if(id<=0){
+            nextId = interestingnessArray.count-1
+        }
+        
+        //println(nextId)
+        //println("*****")
+        
+        interestingnessArrayCurrendID = nextId
+        displayImage(interestingnessArrayCurrendID)
+    }
+    
+    func displayImage(id: Int){
+        if( (id < interestingnessArray.count) && (id > -1) ){
+            var url:NSURL = NSURL.URLWithString(interestingnessArray[id])
+            mainImage.image = NSImage(byReferencingURL: url)
+        } else {
+            println("displayImage id is out of range, id==\(id)")
+        }
+        
     }
 
 }
