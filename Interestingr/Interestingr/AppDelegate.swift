@@ -21,8 +21,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         displayPrevImage(interestingnessArrayCurrendID--)
     }
     
-    
-    
     var interestingnessArray: [String] = []
     var interestingnessArrayCurrendID = 0
     
