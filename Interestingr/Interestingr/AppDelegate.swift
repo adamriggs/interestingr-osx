@@ -97,6 +97,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func displayImage(id: Int){
         if( (id < interestingnessArray.count) && (id > -1) ){
             var url:NSURL = NSURL.URLWithString(interestingnessArray[id])
+            //println("url=="+interestingnessArray[id])
             mainImage.image = NSImage(byReferencingURL: url)
         } else {
             println("displayImage id is out of range, id==\(id)")

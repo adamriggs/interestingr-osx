@@ -13,24 +13,6 @@ class NetworkController: NSObject, NSXMLParserDelegate {
     var flickrOutput = ""
     var parent: AppDelegate = AppDelegate()
     
-//    func getNetReq(reqString:String){
-//        let mySession = NSURLSession.sharedSession()
-//        let url:NSURL = NSURL(string:reqString)
-//        
-//        let networkTask = mySession.dataTaskWithURL(url, completionHandler : {data, response, error -> Void in
-//            var err:NSError?
-////            var theJSON = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSMutableDictionary
-////            let results : NSArray = theJSON["data"]!["children"] as NSArray
-//            //var xml = NSXMLParser(data: data)
-//            dispatch_async(dispatch_get_main_queue(), {
-//                println(data)
-//                //println("\n")
-//                //println(response)
-//                })
-//            })
-//        networkTask.resume()
-//    }
-    
     func getXML(reqString:String){
         //var parser = NSXMLParser()
         
